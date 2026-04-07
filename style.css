@@ -238,3 +238,19 @@ html {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+.banner-item {
+    cursor: pointer;
+}
+
+.banner-item img {
+    width: 250px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.banner-item:hover img {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
