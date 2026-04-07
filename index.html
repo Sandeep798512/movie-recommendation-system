@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MovieMatrix – AI Movie Recommender</title>
+
+    <!-- Mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font (match CSS quality) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<!-- ===== HERO HEADER ===== -->
+<header class="hero">
+
+    <div class="hero-content">
+        <h1>🎬 MovieMatrix</h1>
+        <p class="tagline">
+            Discover movies you'll love with smart recommendations
+        </p>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="movieInput"
+                placeholder="Find your next favorite movie..."
+                autocomplete="off"
+            >
+            <button id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i> Search
+            </button>
+        </div>
+
+        <div id="suggestions"></div>
+    </div>
+
+</header>
+<!-- ===== MOVING MOVIE BANNER ===== -->
+<section class="banner-section">
+    <div class="banner-track">
+
+        <img src="https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg">
+
+        <!-- Duplicate for smooth infinite effect -->
+        <img src="https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg">
+        <img src="https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg">
+
+    </div>
+</section>
+<!-- ===== MAIN CONTENT ===== -->
+<main class="container">
+
+    <!-- Selected Movie -->
+    <section class="section fade-in">
+        <div id="movie-container"></div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="section fade-in">
+        <h2 id="recommend-title"></h2>
+        <div id="recommend-container" class="movie-scroll"></div>
+    </section>
+
+    <!-- Now Playing -->
+    <section class="section fade-in">
+        <h2 id="now-playing-title">🔥 Now Playing</h2>
+        <div id="now-playing" class="movie-scroll"></div>
+    </section>
+
+    <!-- Indian Movies -->
+    <section class="section fade-in">
+        <h2 id="india-title">🇮🇳 Popular Indian Movies</h2>
+        <div id="india-movies" class="movie-scroll"></div>
+    </section>
+
+    <!-- Top IMDb -->
+    <section class="section fade-in">
+        <h2 id="top-imdb-title">🏆 Highest IMDb Rated Movies</h2>
+        <div id="top-imdb" class="movie-scroll"></div>
+    </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <p>© 2026 MovieMatrix| Built with ❤️ using JavaScript</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

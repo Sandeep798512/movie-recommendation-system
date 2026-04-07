@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY BACKGROUND ANIMATION ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #0f2027, #1f1c2c, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #f1f5f9;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #facc15, #22c55e, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #22c55e; }
+    to { text-shadow: 0 0 25px #3b82f6; }
+}
+
+.tagline {
+    opacity: 0.8;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* ===== SEARCH BOX ===== */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.search-box input {
+    width: 340px;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    box-shadow: 0 0 10px #22c55e;
+}
+
+.search-box button {
+    padding: 14px 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    color: white;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(34,197,94,0.4);
+}
+
+/* ===== SUGGESTIONS DROPDOWN ===== */
+#suggestions {
+    max-width: 360px;
+    margin: 10px auto;
+    background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+}
+
+.suggestion-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    transition: 0.3s;
+}
+
+.suggestion-item:hover {
+    background: #22c55e;
+    color: black;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    text-align: center;
+    padding: 30px;
+}
+
+h2 {
+    margin-top: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ===== MOVIE CARD ===== */
+#movie-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.movie-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    width: 380px;
+    border-radius: 18px;
+    transition: 0.4s ease;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(34,197,94,0.5);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.movie-card img:hover {
+    transform: scale(1.03);
+}
+
+.rating {
+    color: gold;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* ===== MOVIE GRIDS ===== */
+#recommend-container,
+#now-playing,
+#top-imdb,
+#india-movies {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* ===== SMALL MOVIE CARDS ===== */
+.recommend-card {
+    width: 190px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.recommend-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(59,130,246,0.4);
+}
+
+.recommend-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== SMOOTH SCROLL ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ===== MOVING BANNER ===== */
+
+.banner-section {
+    width: 100%;
+    overflow: hidden;
+    margin: 60px 0;
+    position: relative;
+}
+
+.banner-track {
+    display: flex;
+    gap: 30px;
+    width: calc(250px * 10);
+    animation: scrollBanner 25s linear infinite;
+}
+
+.banner-track img {
+    width: 250px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.banner-track img:hover {
+    transform: scale(1.08);
+}
+
+.banner-section:hover .banner-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollBanner {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
